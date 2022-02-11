@@ -1,4 +1,7 @@
 <script>
+	import '$lib/css/index.css';
+	import 'carbon-components-svelte/css/all.css';
+
 	import {
 		QueryClient,
 		QueryClientProvider,
@@ -20,9 +23,6 @@
 </QueryClientProvider>
 
 <style>
-	@tailwind base;
-	@tailwind components;
-	@tailwind utilities;
 	@font-face {
 		font-family: sure-italic;
 		src: url(./fonts/OperatorMonoLig-MediumItalic.otf) format('opentype');
