@@ -44,7 +44,7 @@
 	{#await $queryResult}
 		<p>loading..</p>
 	{:then data}
-		<Select labelText="Font Family" {selected} on:change={handleChange}>
+		<Select labelText="Font Family" size="sm" {selected} on:change={handleChange}>
 			{#each data.data as item}
 				<SelectItem value={item.family} text={item.family} />
 			{/each}

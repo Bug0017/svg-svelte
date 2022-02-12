@@ -16,6 +16,7 @@
     "@sveltejs/kit": "next",
     "autoprefixer": "^10.4.2",
     "carbon-components-svelte": "^0.57.1",
+    "carbon-icons-svelte": "^10.44.4",
     "postcss": "^8.4.6",
     "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.4.0",
@@ -29,6 +30,8 @@
   "type": "module",
   "dependencies": {
     "@sveltestack/svelte-query": "^1.6.0",
-    "broadcast-channel": "^4.10.0"
+    "@svgdotjs/svg.js": "^3.1.2",
+    "broadcast-channel": "^4.10.0",
+    "lodash": "^4.17.21"
   }
 }
