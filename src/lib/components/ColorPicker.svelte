@@ -5,10 +5,11 @@
 	import * as _ from 'lodash';
 
 	let colors;
+	let selectedColor;
 
-	const unsubscribe = store.subscribe((value) => {
+	const unsubscribe = store.subscribe((state) => {
 		colors = [
-			_.flatMapDeep(value.globalSettings.colorPalette.colors, (color) => {
+			_.flatMapDeep(state.globalSettings.colorPalette.colors, (color) => {
 				if (typeof color === 'string') {
 					return [color];
 				} else {
@@ -18,18 +19,44 @@
 				}
 			})
 		];
+
+		selectedColor = state.globalSettings.selectedColor;
 	});
+
+	function updateSelectedColor(e) {
+		store.update((state) => {
+			return {
+				...state,
+				globalSettings: {
+					...state.globalSettings,
+					selectedColor: e.target.value
+				}
+			};
+		});
+	}
 
 	onDestroy(() => {
 		unsubscribe();
 	});
 </script>
 
-<input type="color" name="color" id="color-id" list="colors" use:colorPicker={{}} />
-<datalist id="colors">
-	{#each colors as color}
-		{#each color as c}
-			<option value={c} />
+<div class="flex flex-col">
+	<label for="color-id">Background</label>
+	{@debug colors}
+	<input
+		type="color"
+		name="color"
+		id="color-id"
+		list="colors"
+		use:colorPicker={{ selectedColor }}
+		on:change={updateSelectedColor}
+	/>
+	<datalist id="colors">
+		<option value="#ffffff" />
+		{#each colors as color}
+			{#each color as c}
+				<option value={c} />
+			{/each}
 		{/each}
-	{/each}
-</datalist>
+	</datalist>
+</div>

@@ -7,9 +7,10 @@
 	let fontfamily;
 	let width = '100%';
 	let height = '100%';
-
+	let color;
 	const unsubscribe = store.subscribe((value) => {
 		fontfamily = value.globalSettings.selectedFontFamily;
+		color = value.globalSettings.selectedColor;
 	});
 
 	onDestroy(() => {
@@ -23,7 +24,7 @@
 	</div>
 	<div class="flex flex-grow">
 		<div class="w-64 bg-pink-400">left side</div>
-		<div class="flex-grow p-5 bg-gray-200" use:svgEditor={{ width, height, fontfamily }} />
+		<div class="flex-grow p-5 bg-gray-200" use:svgEditor={{ width, height, fontfamily, color }} />
 		<div class="bg-sky-400 p-5 w-64">
 			<SidebarMenu />
 		</div>

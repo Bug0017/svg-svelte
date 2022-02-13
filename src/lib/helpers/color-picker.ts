@@ -1,3 +1,3 @@
 export const colorPicker = (node, params) => {
-	debugger;
+	node.value = params.selectedColor;
 };

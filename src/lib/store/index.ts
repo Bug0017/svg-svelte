@@ -3,6 +3,7 @@ import { writable } from 'svelte/store';
 const initialState = {
 	globalSettings: {
 		selectedFontFamily: 'sure',
+		selectedColor: '#7f1d1d',
 		colorPalette: {
 			colors: {
 				white: '#ffffff',
