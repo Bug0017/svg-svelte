@@ -4,6 +4,18 @@ const initialState = {
 	globalSettings: {
 		selectedFontFamily: 'sure',
 		selectedColor: '#7f1d1d',
+		width: '100%',
+		height: '100%',
+		tools: {
+			rect: [],
+			circle: [],
+			text: [],
+			image: [],
+			line: [],
+			polygon: [],
+			path: [],
+			group: []
+		},
 		colorPalette: {
 			colors: {
 				white: '#ffffff',

@@ -4,7 +4,7 @@
 	import { fetchGoogleFonts } from '$lib/api/google-fonts';
 	import { addFontToDoc } from '$lib/helpers/add-font-to-doc';
 	import { store } from '$lib/store';
-	const queryResult = useQuery<any>('google-fonts', fetchGoogleFonts);
+	const queryResult = useQuery('google-fonts', fetchGoogleFonts);
 
 	let selected;
 

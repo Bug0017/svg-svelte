@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
 	import '$lib/css/index.css';
 	import 'carbon-components-svelte/css/all.css';
-
+	import { createClient, setClient } from '@urql/svelte';
 	import {
 		QueryClient,
 		QueryClientProvider,
@@ -16,6 +16,12 @@
 			broadcastChannel: 'my-app'
 		});
 	});
+
+	const client = createClient({
+		url: import.meta.env.VITE_GRAPHQL_LOCAL_URL
+	} as any);
+
+	setClient(client);
 </script>
 
 <QueryClientProvider client={queryClient}>
